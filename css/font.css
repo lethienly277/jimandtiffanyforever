@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'AdobeGaramondPro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/agaramondpro-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'VogueAvantGarde';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/VogueAvantGarde-Bold.woff") format("woff2");
+}
+
+@font-face {
+  font-family: 'VogueAvantGarde';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/VogueAvantGarde-DemiBold.woff") format("woff2");
+}
+
+@font-face {
+  font-family: 'VogueAvantGarde';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/VogueAvantGarde-Medium.woff") format("woff2");
+}
+
+@font-face {
+  font-family: 'AmbroiseRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/AmbroiseRegular.otf') format('truetype');
+}
