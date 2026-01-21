@@ -1387,6 +1387,81 @@ header {
 	/* background-color: #FCF9EB; */
 }
 
+.our_story-timeline {
+	padding: 72px 0 40px;
+	background-color: #FCF9EB;
+}
+
+.story-timeline-wrapper {
+	max-width: 1024px;
+	margin: 40px auto 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 40px;
+}
+
+.story-timeline-card {
+	background: #FBF6EB;
+	border-radius: 18px;
+	padding: 24px 24px 28px;
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+	text-align: center;
+}
+
+.story-timeline-image {
+	border-radius: 14px;
+	overflow: hidden;
+	margin-bottom: 22px;
+	background: #f6eee2;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.story-timeline-image img {
+	width: 100%;
+	display: block;
+}
+
+.story-timeline-title {
+	font: 22px/28px 'VogueAvantGarde', sans-serif;
+	margin-bottom: 8px;
+	color: #000000;
+}
+
+.story-timeline-date {
+	font: 14px/22px 'VogueAvantGarde', sans-serif;
+	letter-spacing: 0.08em;
+	text-transform: none;
+	color: #8a7b69;
+	position: relative;
+	padding-top: 12px;
+}
+
+.story-timeline-date:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 40px;
+	height: 1px;
+	background: #cdbdaa;
+	transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+	.our_story-timeline {
+		padding: 56px 0 32px;
+	}
+
+	.story-timeline-wrapper {
+		margin-top: 28px;
+		gap: 24px;
+	}
+
+	.story-timeline-card {
+		padding: 20px 18px 22px;
+	}
+}
+
 
 /*# 7. Slider Buttons*/
 .owl-prev {
@@ -1603,12 +1678,13 @@ header {
 	z-index: 0;
 	position: absolute;
 	width: 124px;
-	left: 0
+	left: 0;
 }
 
 .story_img_plane:after {
 	position: absolute;
-	background: #000 z-index: 4;
+	background: #000;
+	z-index: 4;
 	width: 10%;
 	height: 400px;
 	right: -2px;
@@ -1748,6 +1824,87 @@ header {
 	line-height: 1.6;
 }
 
+/* Wedding FAQ (centered, minimal) */
+.faq-wrap {
+	max-width: 760px;
+	margin: 40px auto 0;
+}
+
+.faq-subtitle {
+	text-align: center;
+	margin: 0 0 24px;
+}
+
+.faq-list {
+	text-align: center;
+}
+
+.faq-item {
+	padding: 18px 0;
+	border-top: 1px solid #eee;
+}
+
+.faq-item:last-child {
+	border-bottom: 1px solid #eee;
+}
+
+.faq-toggle {
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0 24px 8px 0;
+	text-align: center;
+	font: 18px/26px 'VogueAvantGarde', sans-serif;
+	font-weight: bold;
+	position: relative;
+	color: inherit;
+	cursor: pointer;
+}
+
+.faq-toggle:focus {
+	outline: none;
+}
+
+.faq-toggle:after {
+	content: "+";
+	position: absolute;
+	right: 0;
+	top: 2px;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.faq-toggle:not(.collapsed):after {
+	content: "–";
+}
+
+.faq-answer {
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0 0 6px;
+}
+
+.faq-answer-group {
+	padding-bottom: 6px;
+}
+
+.faq-item .faq-answer:last-child {
+	margin-bottom: 0;
+}
+
+.faq-help {
+	margin-top: 24px;
+	text-align: center;
+}
+
+.faq-help p {
+	margin: 0;
+}
+
+.faq-help p:first-child {
+	margin-bottom: 6px;
+}
+
 @media (max-width:768px) {
 	.timeline {
 		margin-top: 24px;
@@ -1768,6 +1925,24 @@ header {
 
 	.timeline-meta {
 		font-size: 13px;
+	}
+
+	.faq-wrap {
+		margin-top: 24px;
+	}
+
+	.faq-item {
+		padding: 16px 0;
+	}
+
+	.faq-toggle {
+		font-size: 17px;
+		line-height: 24px;
+	}
+
+	.faq-answer {
+		font-size: 12px;
+		line-height: 18px;
 	}
 }
 
@@ -2145,14 +2320,13 @@ span.wpcf7-not-valid-tip {
 	content: "";
 	position: absolute;
 	top: 0;
-	left: 0
+	left: 0;
 }
 
 .thanks {
 	font: 36px/38px 'VogueAvantGarde', sans-serif;
 	padding: 0 24px;
-	margin: 0 0 21px 0
-	margin-top: 87px;
+	margin: 0 0 21px 0;
 	font-size: 13px;
 	margin-bottom: 0;
 	padding-left: 226px;

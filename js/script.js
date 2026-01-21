@@ -325,16 +325,54 @@
       })
 
     /*FireFly in Intro*/
-    $.firefly({
-      color: '#fff',
-      minPixel: 1,
-      maxPixel: 3,
-      total: 55,
-      on: '.into_firefly'
-    })
+    if ($.firefly && $('.into_firefly').length) {
+      $.firefly({
+        color: '#fff',
+        minPixel: 1,
+        maxPixel: 3,
+        total: 55,
+        on: '.into_firefly'
+      })
+    }
+
+    /*FAQ toggle - click once to show, click again to hide*/
+    var $faq = $('#wedding-faq')
+    if ($faq.length) {
+      $faq.on('click', '.faq-toggle', function (e) {
+        e.preventDefault()
+        e.stopPropagation()
+
+        var $btn = $(this)
+        var target = $btn.attr('data-target')
+        if (!target) return false
+
+        var $panel = $(target)
+        if (!$panel.length) return false
+
+        // Check if this panel is currently open
+        var isOpen = $panel.hasClass('in') || $panel.is(':visible')
+
+        // Close all other panels (accordion behavior)
+        $faq.find('.faq-answer-group').not($panel).removeClass('in').slideUp(300)
+        $faq.find('.faq-toggle').not($btn).addClass('collapsed').attr('aria-expanded', 'false')
+
+        // Toggle the clicked panel
+        if (isOpen) {
+          $panel.removeClass('in').slideUp(300)
+          $btn.addClass('collapsed').attr('aria-expanded', 'false')
+        } else {
+          $panel.addClass('in').slideDown(300)
+          $btn.removeClass('collapsed').attr('aria-expanded', 'true')
+        }
+
+        return false
+      })
+    }
 
     /* Refresh ScrollR */
-    s.refresh($('.guest_wrapper, .our_story'))
+    if (s && typeof s.refresh === 'function') {
+      s.refresh($('.guest_wrapper, .our_story'))
+    }
   })
 
   $(window).on('scroll', () => {
